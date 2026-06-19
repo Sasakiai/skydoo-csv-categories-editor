@@ -11,9 +11,11 @@
 
 ## Done
 
+- [x] Redesign center panel header/actions to avoid layout shift
+- [x] Re-run lint and build after center panel layout change
+- [x] Implement minimal categorization UI with autosave and exports
 - [x] Polish center panel categories preview and fixed Woo link area
 - [x] Re-run lint and build after center panel polish
-- [x] Implement minimal categorization UI with autosave and exports
 - [x] Fix category export pruning to keep deepest selected path
 - [x] Stabilize center panel navigation layout and hover states
 - [x] Re-run lint and build after latest fixes

@@ -55,8 +55,8 @@ function ProductNavButton({
     <button
       className={
         disabled
-          ? "rounded-full border border-zinc-200 bg-zinc-50 px-4 py-2 text-sm font-medium text-zinc-400"
-          : "rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-800 transition-colors hover:border-zinc-900 hover:bg-zinc-900 hover:text-white focus-visible:border-zinc-900 focus-visible:bg-zinc-900 focus-visible:text-white focus-visible:outline-none"
+          ? "inline-flex w-full items-center justify-center rounded-full border border-zinc-200 bg-zinc-50 px-4 py-2 text-sm font-medium text-zinc-400"
+          : "inline-flex w-full items-center justify-center rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-800 transition-colors hover:border-zinc-900 hover:bg-zinc-900 hover:text-white focus-visible:border-zinc-900 focus-visible:bg-zinc-900 focus-visible:text-white focus-visible:outline-none"
       }
       disabled={disabled}
       onClick={onClick}
@@ -525,38 +525,8 @@ export function EditorApp({ initialToken }: { initialToken: string }) {
           <section className="rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm">
             {selectedProduct ? (
               <div className="flex h-full flex-col gap-4">
-                <div className="flex min-h-36 flex-col justify-between gap-4 rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
-                  <div className="min-h-16">
-                    <h2 className="text-2xl font-semibold tracking-tight">{selectedProduct.Nazwa}</h2>
-                  </div>
-                  <div className="flex flex-wrap gap-3">
-                    <ProductNavButton
-                      disabled={!previousProduct}
-                      onClick={() => {
-                        if (!previousProduct) {
-                          return;
-                        }
-
-                        setSelectedProductId(previousProduct.Identyfikator);
-                        setStickyVisibleProductId(null);
-                      }}
-                    >
-                      Poprzedni produkt
-                    </ProductNavButton>
-                    <ProductNavButton
-                      disabled={!nextProduct}
-                      onClick={() => {
-                        if (!nextProduct) {
-                          return;
-                        }
-
-                        setSelectedProductId(nextProduct.Identyfikator);
-                        setStickyVisibleProductId(null);
-                      }}
-                    >
-                      Nastepny produkt
-                    </ProductNavButton>
-                  </div>
+                <div className="min-h-24">
+                  <h2 className="text-2xl font-semibold tracking-tight">{selectedProduct.Nazwa}</h2>
                 </div>
 
                 <div className="rounded-2xl border border-zinc-200 p-4">
@@ -578,13 +548,41 @@ export function EditorApp({ initialToken }: { initialToken: string }) {
                 </div>
 
                 <div className="mt-auto rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
+                  <div className="grid grid-cols-2 gap-3">
+                    <ProductNavButton
+                      disabled={!previousProduct}
+                      onClick={() => {
+                        if (!previousProduct) {
+                          return;
+                        }
+
+                        setSelectedProductId(previousProduct.Identyfikator);
+                        setStickyVisibleProductId(null);
+                      }}
+                    >
+                      ←
+                    </ProductNavButton>
+                    <ProductNavButton
+                      disabled={!nextProduct}
+                      onClick={() => {
+                        if (!nextProduct) {
+                          return;
+                        }
+
+                        setSelectedProductId(nextProduct.Identyfikator);
+                        setStickyVisibleProductId(null);
+                      }}
+                    >
+                      →
+                    </ProductNavButton>
+                  </div>
                   <a
-                    className="inline-flex w-full items-center justify-center rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-800 transition-colors hover:border-zinc-900 hover:bg-zinc-900 hover:text-white"
+                    className="mt-3 inline-flex w-full items-center justify-center rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-800 transition-colors hover:border-zinc-900 hover:bg-zinc-900 hover:text-white"
                     href={selectedProduct["URL produktu"]}
                     rel="noreferrer"
                     target="_blank"
                   >
-                    Otworz produkt w Woo
+                    Otworz produkt
                   </a>
                 </div>
               </div>
