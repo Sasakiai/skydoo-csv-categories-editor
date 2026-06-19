@@ -1,0 +1,1472 @@
+[
+  {
+    "id": 592,
+    "name": "A1",
+    "slug": "a1",
+    "parent": 562
+  },
+  {
+    "id": 600,
+    "name": "A3 i B3 indywidualne",
+    "slug": "a3-i-b3-indywidualne",
+    "parent": 563
+  },
+  {
+    "id": 1649,
+    "name": "Adaptery podróżne",
+    "slug": "adaptery-podrozne",
+    "parent": 502
+  },
+  {
+    "id": 680,
+    "name": "Akcesoria",
+    "slug": "akcesoria-na-biurko",
+    "parent": 507
+  },
+  {
+    "id": 622,
+    "name": "Akcesoria",
+    "slug": "akcesoria",
+    "parent": 512
+  },
+  {
+    "id": 1613,
+    "name": "Akcesoria dla psa",
+    "slug": "pies-akcesoria",
+    "parent": 518
+  },
+  {
+    "id": 1027,
+    "name": "Akcesoria do biegania",
+    "slug": "akcesoria-do-biegania",
+    "parent": 518
+  },
+  {
+    "id": 1086,
+    "name": "Akcesoria do elektroniki",
+    "slug": "akcesoria-do-elektroniki",
+    "parent": 502
+  },
+  {
+    "id": 662,
+    "name": "Akcesoria do komputerów",
+    "slug": "akcesoria-do-komputerow",
+    "parent": 502
+  },
+  {
+    "id": 663,
+    "name": "Akcesoria do telefonów",
+    "slug": "akcesoria-do-telefonow",
+    "parent": 502
+  },
+  {
+    "id": 1260,
+    "name": "Akcesoria kibica",
+    "slug": "akcesoria-kibica",
+    "parent": 518
+  },
+  {
+    "id": 606,
+    "name": "Akcesoria kuchenne",
+    "slug": "akcesoria-kuchenne",
+    "parent": 501
+  },
+  {
+    "id": 607,
+    "name": "Akcesoria łazienkowe",
+    "slug": "akcesoria-lazienkowe",
+    "parent": 501
+  },
+  {
+    "id": 1025,
+    "name": "Akcesoria rowerowe",
+    "slug": "rower-akcesoria",
+    "parent": 508
+  },
+  {
+    "id": 624,
+    "name": "Akcesoria rowerowe",
+    "slug": "akcesoria-rowerowe",
+    "parent": 517
+  },
+  {
+    "id": 1021,
+    "name": "Akcesoria samochodowe",
+    "slug": "samochod-akcesoria",
+    "parent": 508
+  },
+  {
+    "id": 1259,
+    "name": "Akcesoria sportowe",
+    "slug": "akcesoria-sportowe-wypoczynek",
+    "parent": 518
+  },
+  {
+    "id": 623,
+    "name": "Akcesoria sportowe",
+    "slug": "akcesoria-sportowe",
+    "parent": 517
+  },
+  {
+    "id": 645,
+    "name": "Antystresowe",
+    "slug": "antystresowe",
+    "parent": 496
+  },
+  {
+    "id": 11569,
+    "name": "Apteczki",
+    "slug": "apteczki",
+    "parent": 489
+  },
+  {
+    "id": 648,
+    "name": "Artykuły kuchenne",
+    "slug": "artykuly-kuchenne",
+    "parent": 647
+  },
+  {
+    "id": 649,
+    "name": "Artykuły łazienkowe (do pielęgnacji)",
+    "slug": "artykuly-lazienkowe-do-pielegnacji",
+    "parent": 647
+  },
+  {
+    "id": 593,
+    "name": "B1",
+    "slug": "b1",
+    "parent": 562
+  },
+  {
+    "id": 597,
+    "name": "B1 i B2 indywidualne",
+    "slug": "b1-i-b2-indywidualne",
+    "parent": 562
+  },
+  {
+    "id": 598,
+    "name": "B3 kolekcja A",
+    "slug": "b3-kolekcja-a",
+    "parent": 563
+  },
+  {
+    "id": 599,
+    "name": "B3 kolekcja B",
+    "slug": "b3-kolekcja-b",
+    "parent": 563
+  },
+  {
+    "id": 15,
+    "name": "Bez kategorii",
+    "slug": "bez-kategorii",
+    "parent": 0
+  },
+  {
+    "id": 1384,
+    "name": "bezpieczeństwo",
+    "slug": "bezpieczenstwo",
+    "parent": 508
+  },
+  {
+    "id": 548,
+    "name": "Bezrękawniki",
+    "slug": "bezrekawniki",
+    "parent": 493
+  },
+  {
+    "id": 530,
+    "name": "BIANCO",
+    "slug": "bianco",
+    "parent": 521
+  },
+  {
+    "id": 531,
+    "name": "BIANCO łączenia",
+    "slug": "bianco-laczenia",
+    "parent": 521
+  },
+  {
+    "id": 522,
+    "name": "Biurkowe",
+    "slug": "biurkowe",
+    "parent": 491
+  },
+  {
+    "id": 559,
+    "name": "Biuwary A2",
+    "slug": "biuwary-a2",
+    "parent": 522
+  },
+  {
+    "id": 545,
+    "name": "Bluzy",
+    "slug": "bluzy",
+    "parent": 493
+  },
+  {
+    "id": 496,
+    "name": "Breloki",
+    "slug": "breloki",
+    "parent": 489
+  },
+  {
+    "id": 692,
+    "name": "Budzik podróżny",
+    "slug": "budzik-podrozny",
+    "parent": 512
+  },
+  {
+    "id": 618,
+    "name": "Butelki i bidony",
+    "slug": "butelki-i-bidony",
+    "parent": 489
+  },
+  {
+    "id": 620,
+    "name": "Ceramiczne",
+    "slug": "ceramiczne",
+    "parent": 505
+  },
+  {
+    "id": 544,
+    "name": "Czapki",
+    "slug": "czapki",
+    "parent": 493
+  },
+  {
+    "id": 552,
+    "name": "Czterodzielne",
+    "slug": "czterodzielne",
+    "parent": 520
+  },
+  {
+    "id": 608,
+    "name": "Dekoracje",
+    "slug": "dekoracje",
+    "parent": 501
+  },
+  {
+    "id": 519,
+    "name": "Dezynfekcja",
+    "slug": "dezynfekcja",
+    "parent": 489
+  },
+  {
+    "id": 499,
+    "name": "Dla dzieci",
+    "slug": "dla-dzieci",
+    "parent": 489
+  },
+  {
+    "id": 497,
+    "name": "Dla niego",
+    "slug": "dla-niego",
+    "parent": 489
+  },
+  {
+    "id": 498,
+    "name": "Dla niej",
+    "slug": "dla-niej",
+    "parent": 489
+  },
+  {
+    "id": 637,
+    "name": "Długopisy ekologiczne",
+    "slug": "dlugopisy-ekologiczne",
+    "parent": 632
+  },
+  {
+    "id": 636,
+    "name": "Długopisy metalowe",
+    "slug": "dlugopisy-metalowe",
+    "parent": 632
+  },
+  {
+    "id": 633,
+    "name": "Długopisy plastikowe",
+    "slug": "dlugopisy-plastikowe",
+    "parent": 632
+  },
+  {
+    "id": 647,
+    "name": "Do domu",
+    "slug": "do-domu-zestawy-upominkowe",
+    "parent": 515
+  },
+  {
+    "id": 501,
+    "name": "Do domu",
+    "slug": "do-domu",
+    "parent": 489
+  },
+  {
+    "id": 688,
+    "name": "Do książek",
+    "slug": "do-ksiazek",
+    "parent": 511
+  },
+  {
+    "id": 632,
+    "name": "Do pisania",
+    "slug": "do-pisania-artykuly-reklamowe",
+    "parent": 489
+  },
+  {
+    "id": 651,
+    "name": "Do pisania",
+    "slug": "do-pisania-zestawy-upominkowe",
+    "parent": 515
+  },
+  {
+    "id": 11570,
+    "name": "Do samochodu",
+    "slug": "do-samochodu",
+    "parent": 489
+  },
+  {
+    "id": 553,
+    "name": "Dwudzielne",
+    "slug": "dwudzielne",
+    "parent": 520
+  },
+  {
+    "id": 525,
+    "name": "Ekonomiczne",
+    "slug": "ekonomiczne",
+    "parent": 521
+  },
+  {
+    "id": 502,
+    "name": "Elektronika",
+    "slug": "elektronika",
+    "parent": 489
+  },
+  {
+    "id": 635,
+    "name": "Etui na długopisy",
+    "slug": "etui-na-dlugopisy",
+    "parent": 632
+  },
+  {
+    "id": 677,
+    "name": "Etui na długopisy",
+    "slug": "etui-na-dlugopisy-na-biurko",
+    "parent": 507
+  },
+  {
+    "id": 1609,
+    "name": "Etui na telefon",
+    "slug": "etui-na-telefon",
+    "parent": 518
+  },
+  {
+    "id": 538,
+    "name": "Finochrom",
+    "slug": "finochrom",
+    "parent": 521
+  },
+  {
+    "id": 489,
+    "name": "Gadżety",
+    "slug": "gadzety",
+    "parent": 0
+  },
+  {
+    "id": 664,
+    "name": "Głośniki",
+    "slug": "glosniki",
+    "parent": 502
+  },
+  {
+    "id": 587,
+    "name": "Grawerowanie",
+    "slug": "grawerowanie",
+    "parent": 495
+  },
+  {
+    "id": 695,
+    "name": "Grill i kemping",
+    "slug": "grill-i-kemping",
+    "parent": 518
+  },
+  {
+    "id": 1283,
+    "name": "Gry plażowe",
+    "slug": "gry-plazowe",
+    "parent": 518
+  },
+  {
+    "id": 503,
+    "name": "Gry, zabawy, zabawki",
+    "slug": "gry-i-zabawy",
+    "parent": 489
+  },
+  {
+    "id": 1035,
+    "name": "Huby USB",
+    "slug": "huby-usb",
+    "parent": 502
+  },
+  {
+    "id": 694,
+    "name": "Inne",
+    "slug": "inne-sport-i-zdrowie",
+    "parent": 517
+  },
+  {
+    "id": 689,
+    "name": "Inne",
+    "slug": "inne-usb-i-akcesoria",
+    "parent": 511
+  },
+  {
+    "id": 685,
+    "name": "Inne",
+    "slug": "inne-narzedzia",
+    "parent": 508
+  },
+  {
+    "id": 646,
+    "name": "Inne",
+    "slug": "inne",
+    "parent": 496
+  },
+  {
+    "id": 703,
+    "name": "Inne",
+    "slug": "inne-odziez",
+    "parent": 493
+  },
+  {
+    "id": 661,
+    "name": "Inne",
+    "slug": "inne-do-domu",
+    "parent": 501
+  },
+  {
+    "id": 1677,
+    "name": "Inne akcesoria elektroniczne",
+    "slug": "inne-akcesoria-elektroniczne",
+    "parent": 502
+  },
+  {
+    "id": 1263,
+    "name": "Inne akcesoria wypoczynkowe",
+    "slug": "inne-akcesoria-wypoczynkowe",
+    "parent": 518
+  },
+  {
+    "id": 11563,
+    "name": "Introligatornia",
+    "slug": "introligatornia",
+    "parent": 0
+  },
+  {
+    "id": 554,
+    "name": "Jednodzielne",
+    "slug": "jednodzielne",
+    "parent": 520
+  },
+  {
+    "id": 1604,
+    "name": "Kable do ładowania",
+    "slug": "kable-do-ladowania",
+    "parent": 502
+  },
+  {
+    "id": 665,
+    "name": "Kable, huby",
+    "slug": "kable-huby",
+    "parent": 502
+  },
+  {
+    "id": 491,
+    "name": "Kalendarze",
+    "slug": "kalendarze",
+    "parent": 0
+  },
+  {
+    "id": 11572,
+    "name": "Kalendarze książkowe",
+    "slug": "kalendarze-ksiazkowe",
+    "parent": 491
+  },
+  {
+    "id": 11573,
+    "name": "Kalendarze trójdzielne",
+    "slug": "kalendarze-trojdzielne",
+    "parent": 491
+  },
+  {
+    "id": 504,
+    "name": "Kalkulatory",
+    "slug": "kalkulatory",
+    "parent": 489
+  },
+  {
+    "id": 666,
+    "name": "Kalkulatory",
+    "slug": "kalkulatory-elektronika",
+    "parent": 502
+  },
+  {
+    "id": 492,
+    "name": "Kartki świąteczne",
+    "slug": "kartki-swiateczne",
+    "parent": 0
+  },
+  {
+    "id": 579,
+    "name": "Katalogi i broszury firmowe",
+    "slug": "katalogi-i-broszury-firmowe",
+    "parent": 494
+  },
+  {
+    "id": 1290,
+    "name": "Klapki",
+    "slug": "klapki",
+    "parent": 518
+  },
+  {
+    "id": 693,
+    "name": "Koce i poduszki",
+    "slug": "koce-i-poduszki",
+    "parent": 512
+  },
+  {
+    "id": 1008,
+    "name": "Koce piknikowe",
+    "slug": "koce-piknikowe",
+    "parent": 518
+  },
+  {
+    "id": 1626,
+    "name": "Kompasy",
+    "slug": "kompasy",
+    "parent": 518
+  },
+  {
+    "id": 540,
+    "name": "Koperta na dokumenty",
+    "slug": "koperta-na-dokumenty",
+    "parent": 521
+  },
+  {
+    "id": 580,
+    "name": "Koperty firmowe",
+    "slug": "koperty-firmowe",
+    "parent": 494
+  },
+  {
+    "id": 691,
+    "name": "Kosze piknikowe",
+    "slug": "kosze-piknikowe",
+    "parent": 512
+  },
+  {
+    "id": 542,
+    "name": "Koszulki polo",
+    "slug": "koszulki-polo",
+    "parent": 493
+  },
+  {
+    "id": 675,
+    "name": "Kredki i ołówki",
+    "slug": "kredki-i-olowki",
+    "parent": 507
+  },
+  {
+    "id": 1681,
+    "name": "Krokomierze",
+    "slug": "krokomierze",
+    "parent": 518
+  },
+  {
+    "id": 1813,
+    "name": "Krzesła turystyczne",
+    "slug": "krzesla-turystyczne",
+    "parent": 518
+  },
+  {
+    "id": 521,
+    "name": "Książkowe",
+    "slug": "ksiazkowe",
+    "parent": 491
+  },
+  {
+    "id": 505,
+    "name": "Kubki",
+    "slug": "kubki",
+    "parent": 489
+  },
+  {
+    "id": 546,
+    "name": "Kurtki",
+    "slug": "kurtki",
+    "parent": 493
+  },
+  {
+    "id": 667,
+    "name": "Ładowarki",
+    "slug": "ladowarki",
+    "parent": 502
+  },
+  {
+    "id": 1383,
+    "name": "lampki rowerowe",
+    "slug": "lampki-rowerowe",
+    "parent": 508
+  },
+  {
+    "id": 1020,
+    "name": "latarki bezpieczeństwa",
+    "slug": "latarki-bezpieczenstwa",
+    "parent": 508
+  },
+  {
+    "id": 1019,
+    "name": "latarki i lampki",
+    "slug": "latarki-i-lampki",
+    "parent": 508
+  },
+  {
+    "id": 506,
+    "name": "Latarki i lampki",
+    "slug": "latarki",
+    "parent": 489
+  },
+  {
+    "id": 1285,
+    "name": "Lato",
+    "slug": "lato",
+    "parent": 518
+  },
+  {
+    "id": 523,
+    "name": "Listkowe",
+    "slug": "listkowe",
+    "parent": 491
+  },
+  {
+    "id": 671,
+    "name": "Lokalizatory kluczy",
+    "slug": "lokalizatory-kluczy",
+    "parent": 502
+  },
+  {
+    "id": 1262,
+    "name": "Lornetki",
+    "slug": "lornetki",
+    "parent": 518
+  },
+  {
+    "id": 526,
+    "name": "LUX",
+    "slug": "lux",
+    "parent": 521
+  },
+  {
+    "id": 529,
+    "name": "LUX indywidualne",
+    "slug": "lux-indywidualne",
+    "parent": 521
+  },
+  {
+    "id": 527,
+    "name": "LUX łączenia",
+    "slug": "lux-laczenia",
+    "parent": 521
+  },
+  {
+    "id": 528,
+    "name": "LUX zamknięcia",
+    "slug": "lux-zamkniecia",
+    "parent": 521
+  },
+  {
+    "id": 1612,
+    "name": "Maty plażowe i inne",
+    "slug": "maty-plazowe-i-inne",
+    "parent": 518
+  },
+  {
+    "id": 644,
+    "name": "Metalowe",
+    "slug": "metalowe",
+    "parent": 496
+  },
+  {
+    "id": 672,
+    "name": "Metalowe",
+    "slug": "metalowe-kubki",
+    "parent": 505
+  },
+  {
+    "id": 681,
+    "name": "Miarki i taśmy miernicze",
+    "slug": "miarki-i-tasmy-miernicze",
+    "parent": 508
+  },
+  {
+    "id": 595,
+    "name": "Miesięczna",
+    "slug": "miesieczna",
+    "parent": 561
+  },
+  {
+    "id": 1572,
+    "name": "Monitory aktywności",
+    "slug": "monitory-aktywnosci",
+    "parent": 502
+  },
+  {
+    "id": 507,
+    "name": "Na biurko",
+    "slug": "na-biurko",
+    "parent": 489
+  },
+  {
+    "id": 508,
+    "name": "Narzędzia",
+    "slug": "narzedzia",
+    "parent": 489
+  },
+  {
+    "id": 1013,
+    "name": "narzędzia wielofunkcyjne",
+    "slug": "narzedzia-wielofunkcyjne",
+    "parent": 508
+  },
+  {
+    "id": 585,
+    "name": "Notesy firmowe",
+    "slug": "notesy-firmowe",
+    "parent": 494
+  },
+  {
+    "id": 640,
+    "name": "Notesy, notatniki",
+    "slug": "notesy-notatniki",
+    "parent": 489
+  },
+  {
+    "id": 11565,
+    "name": "Nowe kalendarze",
+    "slug": "nowe-kalendarze",
+    "parent": 522
+  },
+  {
+    "id": 1407,
+    "name": "Noże do tapet",
+    "slug": "noze-do-tapet",
+    "parent": 508
+  },
+  {
+    "id": 682,
+    "name": "Noże i scyzoryki",
+    "slug": "noze-i-scyzoryki",
+    "parent": 508
+  },
+  {
+    "id": 11622,
+    "name": "Od ręki",
+    "slug": "od-reki",
+    "parent": 521
+  },
+  {
+    "id": 1223,
+    "name": "Odblaskowe",
+    "slug": "breloki-odblaskowe",
+    "parent": 496
+  },
+  {
+    "id": 493,
+    "name": "Odzież",
+    "slug": "odziez",
+    "parent": 0
+  },
+  {
+    "id": 659,
+    "name": "Ogród",
+    "slug": "ogrod",
+    "parent": 501
+  },
+  {
+    "id": 535,
+    "name": "Okucia",
+    "slug": "okucia",
+    "parent": 521
+  },
+  {
+    "id": 1292,
+    "name": "Okulary przeciwsłoneczne",
+    "slug": "okulary-przeciwsloneczne",
+    "parent": 518
+  },
+  {
+    "id": 654,
+    "name": "Ołówki",
+    "slug": "olowki",
+    "parent": 632
+  },
+  {
+    "id": 990,
+    "name": "Ołówki stolarskie i długopisy",
+    "slug": "olowki-stolarskie-i-dlugopisy",
+    "parent": 508
+  },
+  {
+    "id": 673,
+    "name": "Opakowania do kubków",
+    "slug": "opakowania-do-kubkow",
+    "parent": 505
+  },
+  {
+    "id": 596,
+    "name": "Oprawy książek",
+    "slug": "oprawy-ksiazek",
+    "parent": 0
+  },
+  {
+    "id": 1386,
+    "name": "Organizery samochodowe",
+    "slug": "organizery-samochodowe",
+    "parent": 508
+  },
+  {
+    "id": 678,
+    "name": "Organizery, pojemniki",
+    "slug": "organizery-pojemniki",
+    "parent": 507
+  },
+  {
+    "id": 670,
+    "name": "Pamięci USB",
+    "slug": "pamieci-usb",
+    "parent": 502
+  },
+  {
+    "id": 581,
+    "name": "Papier firmowy",
+    "slug": "papier-firmowy",
+    "parent": 494
+  },
+  {
+    "id": 602,
+    "name": "Parasole",
+    "slug": "parasole",
+    "parent": 489
+  },
+  {
+    "id": 603,
+    "name": "Parasole automatyczne",
+    "slug": "parasole-automatyczne",
+    "parent": 602
+  },
+  {
+    "id": 604,
+    "name": "Parasole manualne",
+    "slug": "parasole-manualne",
+    "parent": 602
+  },
+  {
+    "id": 687,
+    "name": "Pendrive",
+    "slug": "pendrive",
+    "parent": 511
+  },
+  {
+    "id": 588,
+    "name": "Personalizacja",
+    "slug": "personalizacja-znakowanie",
+    "parent": 495
+  },
+  {
+    "id": 533,
+    "name": "Personalizacja",
+    "slug": "personalizacja",
+    "parent": 521
+  },
+  {
+    "id": 1280,
+    "name": "Piłki plażowe i inne dmuchane akcesoria",
+    "slug": "pilki-plazowe-i-inne-dmuchane-akcesoria",
+    "parent": 518
+  },
+  {
+    "id": 674,
+    "name": "Pióra wieczne i kulkowe",
+    "slug": "piora-wieczne-i-kulkowe-na-biurko",
+    "parent": 507
+  },
+  {
+    "id": 656,
+    "name": "Pióra wieczne i kulkowe",
+    "slug": "piora-wieczne-i-kulkowe",
+    "parent": 632
+  },
+  {
+    "id": 560,
+    "name": "Piórnikowe",
+    "slug": "piornikowe",
+    "parent": 522
+  },
+  {
+    "id": 557,
+    "name": "Piramidka",
+    "slug": "piramidka",
+    "parent": 522
+  },
+  {
+    "id": 558,
+    "name": "Piramidka LUX",
+    "slug": "piramidka-lux",
+    "parent": 522
+  },
+  {
+    "id": 562,
+    "name": "Plakatowe",
+    "slug": "plakatowe",
+    "parent": 524
+  },
+  {
+    "id": 11564,
+    "name": "Plastikowe",
+    "slug": "plastikowe",
+    "parent": 496
+  },
+  {
+    "id": 686,
+    "name": "Płaszcze przeciwdeszczowe",
+    "slug": "plaszcze-przeciwdeszczowe",
+    "parent": 602
+  },
+  {
+    "id": 696,
+    "name": "Plaża",
+    "slug": "plaza",
+    "parent": 518
+  },
+  {
+    "id": 631,
+    "name": "Plecaki",
+    "slug": "plecaki",
+    "parent": 510
+  },
+  {
+    "id": 561,
+    "name": "Podkładka pod mysz",
+    "slug": "podkladka-pod-mysz",
+    "parent": 522
+  },
+  {
+    "id": 543,
+    "name": "Polary",
+    "slug": "polary",
+    "parent": 493
+  },
+  {
+    "id": 494,
+    "name": "Poligrafia",
+    "slug": "poligrafia",
+    "parent": 0
+  },
+  {
+    "id": 11567,
+    "name": "Portfele",
+    "slug": "portfele",
+    "parent": 489
+  },
+  {
+    "id": 668,
+    "name": "Powerbanki",
+    "slug": "powerbanki",
+    "parent": 502
+  },
+  {
+    "id": 679,
+    "name": "Przycisk do papieru",
+    "slug": "przycisk-do-papieru",
+    "parent": 507
+  },
+  {
+    "id": 539,
+    "name": "Pudełka do kalendarzy",
+    "slug": "pudelka-do-kalendarzy",
+    "parent": 521
+  },
+  {
+    "id": 1274,
+    "name": "Ręczniki sportowe",
+    "slug": "reczniki-sportowe",
+    "parent": 518
+  },
+  {
+    "id": 594,
+    "name": "Roczna",
+    "slug": "roczna",
+    "parent": 561
+  },
+  {
+    "id": 1493,
+    "name": "rowerowe uchwyty do telefonu",
+    "slug": "rowerowe-uchwyty-do-telefonu",
+    "parent": 508
+  },
+  {
+    "id": 660,
+    "name": "Rowery i skutery",
+    "slug": "rowery-i-skutery",
+    "parent": 501
+  },
+  {
+    "id": 1492,
+    "name": "samochodowe uchwyty do telefonu",
+    "slug": "samochodowe-uchwyty-do-telefonu",
+    "parent": 508
+  },
+  {
+    "id": 698,
+    "name": "Saszetki i nerki",
+    "slug": "saszetki-i-nerki",
+    "parent": 510
+  },
+  {
+    "id": 524,
+    "name": "Ścienne",
+    "slug": "scienne",
+    "parent": 491
+  },
+  {
+    "id": 1403,
+    "name": "scyzoryki",
+    "slug": "scyzoryki",
+    "parent": 508
+  },
+  {
+    "id": 575,
+    "name": "Seria CLASSIC",
+    "slug": "seria-classic",
+    "parent": 492
+  },
+  {
+    "id": 578,
+    "name": "Seria DUO",
+    "slug": "seria-duo",
+    "parent": 492
+  },
+  {
+    "id": 576,
+    "name": "Seria ECCO",
+    "slug": "seria-ecco",
+    "parent": 492
+  },
+  {
+    "id": 577,
+    "name": "Seria PRESTIGE",
+    "slug": "seria-prestige",
+    "parent": 492
+  },
+  {
+    "id": 589,
+    "name": "Sitodruk",
+    "slug": "sitodruk",
+    "parent": 495
+  },
+  {
+    "id": 1254,
+    "name": "Ski passy",
+    "slug": "ski-passy",
+    "parent": 518
+  },
+  {
+    "id": 1390,
+    "name": "skrobaczki",
+    "slug": "skrobaczki",
+    "parent": 508
+  },
+  {
+    "id": 605,
+    "name": "Skrzynki i akcesoria do wina",
+    "slug": "skrzynki-i-akcesoria-do-wina",
+    "parent": 501
+  },
+  {
+    "id": 650,
+    "name": "Skrzynki i akcesoria do wina",
+    "slug": "skrzynki-i-akcesoria-do-wina-do-domu-zestawy-upominkowe",
+    "parent": 647
+  },
+  {
+    "id": 652,
+    "name": "Skrzynki i akcesoria do wina",
+    "slug": "skrzynki-i-akcesoria-do-wina-do-pisania-zestawy-upominkowe",
+    "parent": 651
+  },
+  {
+    "id": 516,
+    "name": "Słodycze",
+    "slug": "slodycze",
+    "parent": 489
+  },
+  {
+    "id": 669,
+    "name": "Słuchawki",
+    "slug": "sluchawki",
+    "parent": 502
+  },
+  {
+    "id": 11425,
+    "name": "Smycze",
+    "slug": "smycze-artykuly-reklamowe",
+    "parent": 518
+  },
+  {
+    "id": 11568,
+    "name": "Smycze",
+    "slug": "smycze",
+    "parent": 489
+  },
+  {
+    "id": 547,
+    "name": "Softshelle",
+    "slug": "softshelle",
+    "parent": 493
+  },
+  {
+    "id": 556,
+    "name": "Spiralowane",
+    "slug": "spiralowane",
+    "parent": 522
+  },
+  {
+    "id": 517,
+    "name": "Sport i zdrowie",
+    "slug": "sport-i-zdrowie",
+    "parent": 489
+  },
+  {
+    "id": 1401,
+    "name": "śrubokręty",
+    "slug": "srubokrety",
+    "parent": 508
+  },
+  {
+    "id": 1044,
+    "name": "Stacje pogodowe",
+    "slug": "stacje-pogodowe",
+    "parent": 502
+  },
+  {
+    "id": 549,
+    "name": "Szale",
+    "slug": "szale",
+    "parent": 493
+  },
+  {
+    "id": 621,
+    "name": "Szklane",
+    "slug": "szklane",
+    "parent": 505
+  },
+  {
+    "id": 541,
+    "name": "T-shirty",
+    "slug": "t-shirty",
+    "parent": 493
+  },
+  {
+    "id": 590,
+    "name": "Tampodruk",
+    "slug": "tampodruk",
+    "parent": 495
+  },
+  {
+    "id": 536,
+    "name": "Tasiemki",
+    "slug": "tasiemki",
+    "parent": 521
+  },
+  {
+    "id": 639,
+    "name": "Teczki",
+    "slug": "teczki",
+    "parent": 489
+  },
+  {
+    "id": 582,
+    "name": "Teczki firmowe",
+    "slug": "teczki-firmowe",
+    "parent": 494
+  },
+  {
+    "id": 617,
+    "name": "Termiczne",
+    "slug": "termiczne",
+    "parent": 505
+  },
+  {
+    "id": 555,
+    "name": "Termometr",
+    "slug": "termometr",
+    "parent": 520
+  },
+  {
+    "id": 509,
+    "name": "Termosy, piersiówki",
+    "slug": "termosy-piersiowki",
+    "parent": 489
+  },
+  {
+    "id": 591,
+    "name": "Tłoczenie",
+    "slug": "tloczenie-znakowanie",
+    "parent": 495
+  },
+  {
+    "id": 532,
+    "name": "Tłoczenie",
+    "slug": "tloczenie",
+    "parent": 521
+  },
+  {
+    "id": 626,
+    "name": "Torby bawełniane",
+    "slug": "torby-bawelniane",
+    "parent": 510
+  },
+  {
+    "id": 586,
+    "name": "Torby firmowe",
+    "slug": "torby-firmowe",
+    "parent": 494
+  },
+  {
+    "id": 625,
+    "name": "Torby i koszyki na zakupy",
+    "slug": "torby-i-koszyki-na-zakupy",
+    "parent": 510
+  },
+  {
+    "id": 629,
+    "name": "Torby i plecaki na laptopy",
+    "slug": "torby-i-plecaki-na-laptopy",
+    "parent": 510
+  },
+  {
+    "id": 697,
+    "name": "Torby i walizki podróżne",
+    "slug": "torby-i-walizki-podrozne",
+    "parent": 510
+  },
+  {
+    "id": 700,
+    "name": "Torby non-woven",
+    "slug": "torby-non-woven",
+    "parent": 510
+  },
+  {
+    "id": 699,
+    "name": "Torby papierowe",
+    "slug": "torby-papierowe",
+    "parent": 510
+  },
+  {
+    "id": 701,
+    "name": "Torby sportowe",
+    "slug": "torby-sportowe",
+    "parent": 510
+  },
+  {
+    "id": 630,
+    "name": "Torby termiczne",
+    "slug": "torby-termiczne",
+    "parent": 510
+  },
+  {
+    "id": 690,
+    "name": "Torby termiczne",
+    "slug": "torby-termiczne-w-podrozy",
+    "parent": 512
+  },
+  {
+    "id": 627,
+    "name": "Torby z juty",
+    "slug": "torby-z-juty",
+    "parent": 510
+  },
+  {
+    "id": 510,
+    "name": "Torby, worki, plecaki",
+    "slug": "torby",
+    "parent": 489
+  },
+  {
+    "id": 638,
+    "name": "Touch pen",
+    "slug": "touch-pen",
+    "parent": 632
+  },
+  {
+    "id": 550,
+    "name": "Trójdzielne",
+    "slug": "trojdzielne-trojdzielne",
+    "parent": 520
+  },
+  {
+    "id": 520,
+    "name": "Trójdzielne",
+    "slug": "trojdzielne",
+    "parent": 491
+  },
+  {
+    "id": 551,
+    "name": "Trójdzielne eko",
+    "slug": "trojdzielne-eko",
+    "parent": 520
+  },
+  {
+    "id": 1678,
+    "name": "Uchwyty do selfie",
+    "slug": "uchwyty-do-selfie",
+    "parent": 502
+  },
+  {
+    "id": 584,
+    "name": "Ulotki",
+    "slug": "ulotki",
+    "parent": 494
+  },
+  {
+    "id": 511,
+    "name": "USB i akcesoria",
+    "slug": "usb-i-akcesoria",
+    "parent": 489
+  },
+  {
+    "id": 512,
+    "name": "W podróży",
+    "slug": "w-podrozy",
+    "parent": 489
+  },
+  {
+    "id": 684,
+    "name": "Wielofunkcyjne",
+    "slug": "wielofunkcyjne-narzedzia",
+    "parent": 508
+  },
+  {
+    "id": 658,
+    "name": "Wielofunkcyjne",
+    "slug": "wielofunkcyjne",
+    "parent": 632
+  },
+  {
+    "id": 563,
+    "name": "Wieloplanszowe",
+    "slug": "wieloplanszowe",
+    "parent": 524
+  },
+  {
+    "id": 583,
+    "name": "Wizytówki",
+    "slug": "wizytowki",
+    "parent": 494
+  },
+  {
+    "id": 513,
+    "name": "Wizytowniki",
+    "slug": "wizytowniki",
+    "parent": 489
+  },
+  {
+    "id": 537,
+    "name": "Wklejana gumka na długopis",
+    "slug": "wklejana-gumka-na-dlugopis",
+    "parent": 521
+  },
+  {
+    "id": 534,
+    "name": "Wklejki reklamowe",
+    "slug": "wklejki-reklamowe",
+    "parent": 521
+  },
+  {
+    "id": 702,
+    "name": "Worki",
+    "slug": "worki",
+    "parent": 510
+  },
+  {
+    "id": 1039,
+    "name": "Wskaźniki laserowe",
+    "slug": "wskazniki-laserowe",
+    "parent": 502
+  },
+  {
+    "id": 518,
+    "name": "Wypoczynek",
+    "slug": "wypoczynek",
+    "parent": 489
+  },
+  {
+    "id": 676,
+    "name": "Zakreślacze, flamastry, markery",
+    "slug": "zakreslacze-flamastry-markery-na-biurko",
+    "parent": 507
+  },
+  {
+    "id": 11440,
+    "name": "Zakreślacze, flamastry. Markery",
+    "slug": "zakreslacze-flamastry-markery-do-pisania-artykuly-reklamowe",
+    "parent": 632
+  },
+  {
+    "id": 514,
+    "name": "Zapalniczki",
+    "slug": "zapalniczki",
+    "parent": 489
+  },
+  {
+    "id": 641,
+    "name": "Zegary i zegarki",
+    "slug": "zegary-i-zegarki",
+    "parent": 502
+  },
+  {
+    "id": 683,
+    "name": "Zestawy",
+    "slug": "zestawy",
+    "parent": 508
+  },
+  {
+    "id": 1397,
+    "name": "zestawy narzędzi",
+    "slug": "zestawy-narzedzi",
+    "parent": 508
+  },
+  {
+    "id": 657,
+    "name": "Zestawy piśmienne",
+    "slug": "zestawy-pismienne",
+    "parent": 632
+  },
+  {
+    "id": 2390,
+    "name": "zestawy upominkowe",
+    "slug": "zestawy-upominkowe-zestawy-upominkowe",
+    "parent": 515
+  },
+  {
+    "id": 515,
+    "name": "Zestawy upominkowe",
+    "slug": "zestawy-upominkowe",
+    "parent": 489
+  },
+  {
+    "id": 495,
+    "name": "Znakowanie",
+    "slug": "znakowanie",
+    "parent": 0
+  }
+]
