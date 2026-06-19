@@ -1,12 +1,8 @@
 import { NextResponse } from "next/server";
 
-import { saveProductAssignments } from "@/lib/assignments";
+import { saveAssignments } from "@/lib/assignments";
 import { isAccessAllowed } from "@/lib/auth";
-
-type AssignPayload = {
-  productId: number;
-  categoryIds: number[];
-};
+import type { AssignPayload } from "@/lib/types";
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null;
@@ -17,10 +13,14 @@ function isAssignPayload(value: unknown): value is AssignPayload {
     return false;
   }
 
-  return (
-    typeof value.productId === "number" &&
-    Array.isArray(value.categoryIds) &&
-    value.categoryIds.every((item) => typeof item === "number")
+  const assignments = value.assignments;
+
+  if (!isRecord(assignments)) {
+    return false;
+  }
+
+  return Object.values(assignments).every(
+    (entry) => Array.isArray(entry) && entry.every((item) => typeof item === "number"),
   );
 }
 
@@ -37,7 +37,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid payload." }, { status: 400 });
   }
 
-  const assignments = await saveProductAssignments(payload.productId, payload.categoryIds);
+  const assignments = await saveAssignments(payload.assignments);
 
   return NextResponse.json({ assignments });
 }

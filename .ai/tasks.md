@@ -2,21 +2,24 @@
 
 ## In Progress
 
-- [ ] Implement minimal categorization UI with autosave and exports
 
 ## To Do
 
-- [ ] Debounce assignment saves and prevent stale overwrites
-- [ ] Drop redundant ancestor category paths in export
-- [ ] Simplify center panel and add previous/next navigation
-- [ ] Fix assigned filter behavior after unassigning
-- [ ] Re-run lint and build after UX changes
 
 ## Backlog
 
 
 ## Done
 
+- [x] Fix category export pruning to keep deepest selected path
+- [x] Stabilize center panel navigation layout and hover states
+- [x] Re-run lint and build after latest fixes
+- [x] Implement minimal categorization UI with autosave and exports
+- [x] Debounce assignment saves and prevent stale overwrites
+- [x] Drop redundant ancestor category paths in export
+- [x] Simplify center panel and add previous/next navigation
+- [x] Fix assigned filter behavior after unassigning
+- [x] Re-run lint and build after UX changes
 - [x] Adjust filter behavior and active product persistence
 - [x] Remove header copy
 - [x] Switch Blob usage to private access and reverify

@@ -96,6 +96,36 @@ export function buildCategoryLabel(categoryIds: number[], pathMap: Map<number, s
   return labels.join(", ");
 }
 
+export function pruneAncestorCategoryIds(categoryIds: number[], categories: Category[]): number[] {
+  const categoryById = new Map<number, Category>();
+
+  for (const category of categories) {
+    categoryById.set(category.id, category);
+  }
+
+  const selectedIds = new Set(categoryIds);
+
+  return categoryIds.filter((categoryId) => {
+    for (const selectedId of selectedIds) {
+      if (selectedId === categoryId) {
+        continue;
+      }
+
+      let currentParentId = categoryById.get(selectedId)?.parent ?? 0;
+
+      while (currentParentId !== 0) {
+        if (currentParentId === categoryId) {
+          return false;
+        }
+
+        currentParentId = categoryById.get(currentParentId)?.parent ?? 0;
+      }
+    }
+
+    return true;
+  });
+}
+
 export function filterCategoryTree(
   nodes: CategoryNode[],
   query: string,

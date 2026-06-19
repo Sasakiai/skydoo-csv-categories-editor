@@ -26,3 +26,7 @@ export type BootstrapPayload = {
   categories: Category[];
   assignments: Assignments;
 };
+
+export type AssignPayload = {
+  assignments: Assignments;
+};

@@ -7,8 +7,9 @@ import {
   buildCategoryPathMap,
   buildCategoryTree,
   filterCategoryTree,
+  pruneAncestorCategoryIds,
 } from "@/lib/category-utils";
-import type { BootstrapPayload, CategoryNode, ProductRecord } from "@/lib/types";
+import type { Assignments, BootstrapPayload, CategoryNode, ProductRecord } from "@/lib/types";
 
 type SaveState = "idle" | "saving" | "saved" | "error";
 type ProductFilter = "all" | "assigned" | "unassigned";
@@ -29,6 +30,31 @@ function ProductFilterButton({
           ? "rounded-full bg-zinc-900 px-3 py-1.5 text-sm font-medium text-white"
           : "rounded-full border border-zinc-200 px-3 py-1.5 text-sm font-medium text-zinc-700 hover:bg-zinc-50"
       }
+      onClick={onClick}
+      type="button"
+    >
+      {children}
+    </button>
+  );
+}
+
+function ProductNavButton({
+  children,
+  disabled,
+  onClick,
+}: {
+  children: string;
+  disabled: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      className={
+        disabled
+          ? "rounded-full border border-zinc-200 bg-zinc-50 px-4 py-2 text-sm font-medium text-zinc-400"
+          : "rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-800 transition-colors hover:border-zinc-900 hover:bg-zinc-900 hover:text-white focus-visible:border-zinc-900 focus-visible:bg-zinc-900 focus-visible:text-white focus-visible:outline-none"
+      }
+      disabled={disabled}
       onClick={onClick}
       type="button"
     >
@@ -98,10 +124,12 @@ export function EditorApp({ initialToken }: { initialToken: string }) {
   const [productFilter, setProductFilter] = useState<ProductFilter>("all");
   const [saveState, setSaveState] = useState<SaveState>("idle");
   const [saveMessage, setSaveMessage] = useState("Jeszcze nic nie zapisano.");
+  const [stickyVisibleProductId, setStickyVisibleProductId] = useState<number | null>(null);
   const token = initialToken;
   const deferredProductSearch = useDeferredValue(productSearch);
   const deferredCategorySearch = useDeferredValue(categorySearch);
-  const saveQueueRef = useRef(Promise.resolve());
+  const saveTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const saveRequestVersionRef = useRef(0);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -136,6 +164,14 @@ export function EditorApp({ initialToken }: { initialToken: string }) {
     return () => controller.abort();
   }, [token]);
 
+  useEffect(() => {
+    return () => {
+      if (saveTimeoutRef.current) {
+        clearTimeout(saveTimeoutRef.current);
+      }
+    };
+  }, []);
+
   const pathMap = useMemo(() => {
     return data ? buildCategoryPathMap(data.categories) : new Map<number, string>();
   }, [data]);
@@ -157,13 +193,13 @@ export function EditorApp({ initialToken }: { initialToken: string }) {
 
     return data.products.filter((product) => {
       const assignedCategoryIds = data.assignments[String(product.Identyfikator)] ?? [];
-      const isSelected = product.Identyfikator === selectedProductId;
+      const isStickyVisible = product.Identyfikator === stickyVisibleProductId;
       const matchesFilter =
         productFilter === "all" ||
         (productFilter === "assigned" && assignedCategoryIds.length > 0) ||
         (productFilter === "unassigned" && assignedCategoryIds.length === 0);
 
-      if (!matchesFilter && !isSelected) {
+      if (!matchesFilter && !isStickyVisible) {
         return false;
       }
 
@@ -176,7 +212,7 @@ export function EditorApp({ initialToken }: { initialToken: string }) {
         String(product.SKU).toLocaleLowerCase("pl").includes(normalizedQuery)
       );
     });
-  }, [data, deferredProductSearch, productFilter, selectedProductId]);
+  }, [data, deferredProductSearch, productFilter, stickyVisibleProductId]);
 
   const selectedProduct = useMemo(() => {
     if (!data) {
@@ -195,6 +231,8 @@ export function EditorApp({ initialToken }: { initialToken: string }) {
 
     return filteredProducts[0] ?? null;
   }, [data, filteredProducts, selectedProductId]);
+
+  const currentSelectedProductId = selectedProduct?.Identyfikator ?? null;
 
   const selectedCategoryIds = useMemo(() => {
     if (!data || !selectedProduct) {
@@ -222,44 +260,50 @@ export function EditorApp({ initialToken }: { initialToken: string }) {
   }, [data]);
 
   const currentCategoryLabel = useMemo(() => {
-    return buildCategoryLabel(selectedCategoryIds, pathMap);
-  }, [pathMap, selectedCategoryIds]);
+    const exportCategoryIds = data
+      ? pruneAncestorCategoryIds(selectedCategoryIds, data.categories)
+      : selectedCategoryIds;
 
-  const queueSave = (product: ProductRecord, nextCategoryIds: number[], nextData: BootstrapPayload) => {
+    return buildCategoryLabel(exportCategoryIds, pathMap);
+  }, [data, pathMap, selectedCategoryIds]);
+
+  const saveAssignmentsWithDebounce = (assignments: Assignments, product: ProductRecord) => {
+    if (saveTimeoutRef.current) {
+      clearTimeout(saveTimeoutRef.current);
+    }
+
     setSaveState("saving");
-    setSaveMessage(`Zapisywanie: ${product.Nazwa}`);
+    setSaveMessage(`Zapisze za chwile: ${product.Nazwa}`);
 
-    saveQueueRef.current = saveQueueRef.current
-      .then(async () => {
+    saveTimeoutRef.current = setTimeout(async () => {
+      const requestVersion = saveRequestVersionRef.current + 1;
+      saveRequestVersionRef.current = requestVersion;
+
+      try {
         const search = token ? `?token=${encodeURIComponent(token)}` : "";
         const response = await fetch(`/api/assign${search}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({
-            productId: product.Identyfikator,
-            categoryIds: nextCategoryIds,
-          }),
+          body: JSON.stringify({ assignments }),
         });
 
         if (!response.ok) {
           throw new Error("Nie udalo sie zapisac przypisania.");
         }
 
-        const payload: { assignments: BootstrapPayload["assignments"] } = await response.json();
-        setData({
-          ...nextData,
-          assignments: payload.assignments,
-        });
-        setSaveState("saved");
-        setSaveMessage(`Zapisano: ${product.Nazwa}`);
-      })
-      .catch(() => {
-        setData(nextData);
-        setSaveState("error");
-        setSaveMessage(`Blad zapisu: ${product.Nazwa}`);
-      });
+        if (saveRequestVersionRef.current === requestVersion) {
+          setSaveState("saved");
+          setSaveMessage(`Zapisano: ${product.Nazwa}`);
+        }
+      } catch {
+        if (saveRequestVersionRef.current === requestVersion) {
+          setSaveState("error");
+          setSaveMessage(`Blad zapisu: ${product.Nazwa}`);
+        }
+      }
+    }, 450);
   };
 
   const toggleCategory = (categoryId: number) => {
@@ -292,9 +336,22 @@ export function EditorApp({ initialToken }: { initialToken: string }) {
       assignments: nextAssignments,
     };
 
+    if (productFilter === "unassigned" && nextCategoryIds.length > 0) {
+      setStickyVisibleProductId(selectedProduct.Identyfikator);
+    }
+
     setData(nextData);
-    queueSave(selectedProduct, nextCategoryIds, nextData);
+    saveAssignmentsWithDebounce(nextAssignments, selectedProduct);
   };
+
+  const selectedProductIndex = currentSelectedProductId
+    ? filteredProducts.findIndex((product) => product.Identyfikator === currentSelectedProductId)
+    : -1;
+  const previousProduct = selectedProductIndex > 0 ? filteredProducts[selectedProductIndex - 1] : null;
+  const nextProduct =
+    selectedProductIndex >= 0 && selectedProductIndex < filteredProducts.length - 1
+      ? filteredProducts[selectedProductIndex + 1]
+      : null;
 
   if (loadError) {
     return (
@@ -320,10 +377,23 @@ export function EditorApp({ initialToken }: { initialToken: string }) {
       <div className="mx-auto flex max-w-7xl flex-col gap-4">
         <header className="rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-            <p className="text-sm text-zinc-600">
-              Produktow: {progress.total}. Z przypisaniem: {progress.assigned}. Bez przypisania:{" "}
-              {progress.total - progress.assigned}.
-            </p>
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center justify-between gap-4 text-sm text-zinc-600">
+                <p>
+                  Postep: {progress.assigned} / {progress.total}
+                </p>
+                <p>{Math.round((progress.assigned / Math.max(progress.total, 1)) * 100)}%</p>
+              </div>
+              <div className="mt-2 h-3 overflow-hidden rounded-full bg-zinc-100">
+                <div
+                  className="h-full rounded-full bg-zinc-900 transition-[width] duration-200"
+                  style={{ width: `${(progress.assigned / Math.max(progress.total, 1)) * 100}%` }}
+                />
+              </div>
+              <p className="mt-2 text-sm text-zinc-600">
+                Z przypisaniem: {progress.assigned}. Bez przypisania: {progress.total - progress.assigned}.
+              </p>
+            </div>
             <div className="flex flex-wrap gap-3">
               <a
                 className="rounded-full bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-700"
@@ -366,19 +436,28 @@ export function EditorApp({ initialToken }: { initialToken: string }) {
               <div className="flex flex-wrap gap-2">
                 <ProductFilterButton
                   active={productFilter === "all"}
-                  onClick={() => setProductFilter("all")}
+                  onClick={() => {
+                    setProductFilter("all");
+                    setStickyVisibleProductId(null);
+                  }}
                 >
                   Wszystkie
                 </ProductFilterButton>
                 <ProductFilterButton
                   active={productFilter === "assigned"}
-                  onClick={() => setProductFilter("assigned")}
+                  onClick={() => {
+                    setProductFilter("assigned");
+                    setStickyVisibleProductId(null);
+                  }}
                 >
                   Przypisane
                 </ProductFilterButton>
                 <ProductFilterButton
                   active={productFilter === "unassigned"}
-                  onClick={() => setProductFilter("unassigned")}
+                  onClick={() => {
+                    setProductFilter("unassigned");
+                    setStickyVisibleProductId(null);
+                  }}
                 >
                   Bez przypisania
                 </ProductFilterButton>
@@ -388,7 +467,7 @@ export function EditorApp({ initialToken }: { initialToken: string }) {
             <div className="mt-4 flex max-h-[70vh] flex-col gap-2 overflow-y-auto pr-1">
               {filteredProducts.map((product) => {
                 const assignedCategoryIds = data.assignments[String(product.Identyfikator)] ?? [];
-                const isSelected = product.Identyfikator === selectedProductId;
+                const isSelected = product.Identyfikator === currentSelectedProductId;
 
                 return (
                   <button
@@ -398,7 +477,10 @@ export function EditorApp({ initialToken }: { initialToken: string }) {
                         : "rounded-2xl border border-zinc-200 bg-white p-3 text-left hover:border-zinc-300 hover:bg-zinc-50"
                     }
                     key={product.Identyfikator}
-                    onClick={() => setSelectedProductId(product.Identyfikator)}
+                    onClick={() => {
+                      setSelectedProductId(product.Identyfikator);
+                      setStickyVisibleProductId(null);
+                    }}
                     type="button"
                   >
                     <div className="flex items-start justify-between gap-3">
@@ -436,31 +518,39 @@ export function EditorApp({ initialToken }: { initialToken: string }) {
           <section className="rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm">
             {selectedProduct ? (
               <div className="flex h-full flex-col gap-4">
-                <div>
-                  <p className="text-sm uppercase tracking-[0.16em] text-zinc-500">Wybrany produkt</p>
-                  <h2 className="mt-2 text-2xl font-semibold tracking-tight">{selectedProduct.Nazwa}</h2>
-                </div>
+                <div className="flex min-h-36 flex-col justify-between gap-4 rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
+                  <div className="min-h-16">
+                    <h2 className="text-2xl font-semibold tracking-tight">{selectedProduct.Nazwa}</h2>
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    <ProductNavButton
+                      disabled={!previousProduct}
+                      onClick={() => {
+                        if (!previousProduct) {
+                          return;
+                        }
 
-                <dl className="grid gap-3 rounded-2xl bg-zinc-50 p-4 text-sm sm:grid-cols-2">
-                  <div>
-                    <dt className="text-zinc-500">ID</dt>
-                    <dd className="mt-1 font-medium text-zinc-900">{selectedProduct.Identyfikator}</dd>
+                        setSelectedProductId(previousProduct.Identyfikator);
+                        setStickyVisibleProductId(null);
+                      }}
+                    >
+                      Poprzedni produkt
+                    </ProductNavButton>
+                    <ProductNavButton
+                      disabled={!nextProduct}
+                      onClick={() => {
+                        if (!nextProduct) {
+                          return;
+                        }
+
+                        setSelectedProductId(nextProduct.Identyfikator);
+                        setStickyVisibleProductId(null);
+                      }}
+                    >
+                      Nastepny produkt
+                    </ProductNavButton>
                   </div>
-                  <div>
-                    <dt className="text-zinc-500">SKU</dt>
-                    <dd className="mt-1 font-medium text-zinc-900">{selectedProduct.SKU}</dd>
-                  </div>
-                  <div>
-                    <dt className="text-zinc-500">Rodzaj</dt>
-                    <dd className="mt-1 font-medium text-zinc-900">{selectedProduct.Rodzaj}</dd>
-                  </div>
-                  <div>
-                    <dt className="text-zinc-500">Status kategorii</dt>
-                    <dd className="mt-1 font-medium text-zinc-900">
-                      {selectedCategoryIds.length > 0 ? "Przypisane" : "Bez przypisania"}
-                    </dd>
-                  </div>
-                </dl>
+                </div>
 
                 <div className="rounded-2xl border border-zinc-200 p-4">
                   <p className="text-sm font-medium text-zinc-800">Finalne pole `Kategorie`</p>

@@ -1,4 +1,8 @@
-import { buildCategoryLabel, buildCategoryPathMap } from "@/lib/category-utils";
+import {
+  buildCategoryLabel,
+  buildCategoryPathMap,
+  pruneAncestorCategoryIds,
+} from "@/lib/category-utils";
 import type { Assignments, Category, ProductRecord } from "@/lib/types";
 
 function escapeCsvCell(value: string | number): string {
@@ -25,7 +29,8 @@ export function buildExportedProducts(
 
   return products.map((product) => {
     const assignedCategoryIds = assignments[String(product.Identyfikator)] ?? [];
-    const categoryLabel = buildCategoryLabel(assignedCategoryIds, pathMap);
+    const exportCategoryIds = pruneAncestorCategoryIds(assignedCategoryIds, categories);
+    const categoryLabel = buildCategoryLabel(exportCategoryIds, pathMap);
 
     return {
       ...product,
@@ -43,7 +48,8 @@ export function buildWooCsv(
   const header = ["ID", "SKU", "Categories"];
   const rows = products.map((product) => {
     const assignedCategoryIds = assignments[String(product.Identyfikator)] ?? [];
-    const categoryLabel = buildCategoryLabel(assignedCategoryIds, pathMap);
+    const exportCategoryIds = pruneAncestorCategoryIds(assignedCategoryIds, categories);
+    const categoryLabel = buildCategoryLabel(exportCategoryIds, pathMap);
 
     return [
       escapeCsvCell(product.Identyfikator),
