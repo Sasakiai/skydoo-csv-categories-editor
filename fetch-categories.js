@@ -1,10 +1,14 @@
-const fs = require("fs/promises");
+import { writeFile } from "node:fs/promises";
 
-const BASE_URL = "https://biznesowe-inspiracje.skydoo.com.pl/";
-const KEY = "ck_85d95867e31104f32e31fd8762188adb5c6ddcf4";
-const SECRET = "cs_f74a85fed94236008a0da70f887f82525d20fc90";
+const BASE_URL = process.env.WOO_BASE_URL;
+const KEY = process.env.WOO_CONSUMER_KEY;
+const SECRET = process.env.WOO_CONSUMER_SECRET;
 
 async function fetchAllCategories() {
+  if (!BASE_URL || !KEY || !SECRET) {
+    throw new Error("Set WOO_BASE_URL, WOO_CONSUMER_KEY and WOO_CONSUMER_SECRET first.");
+  }
+
   const all = [];
   let page = 1;
 
@@ -40,7 +44,7 @@ async function fetchAllCategories() {
 
 async function main() {
   const categories = await fetchAllCategories();
-  await fs.writeFile(
+  await writeFile(
     "categories.json",
     JSON.stringify(categories, null, 2),
     "utf8"
