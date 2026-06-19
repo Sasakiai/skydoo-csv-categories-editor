@@ -11,10 +11,12 @@
 
 ## Done
 
+- [x] Polish center panel categories preview and fixed Woo link area
+- [x] Re-run lint and build after center panel polish
+- [x] Implement minimal categorization UI with autosave and exports
 - [x] Fix category export pruning to keep deepest selected path
 - [x] Stabilize center panel navigation layout and hover states
 - [x] Re-run lint and build after latest fixes
-- [x] Implement minimal categorization UI with autosave and exports
 - [x] Debounce assignment saves and prevent stale overwrites
 - [x] Drop redundant ancestor category paths in export
 - [x] Simplify center panel and add previous/next navigation

@@ -3,7 +3,6 @@
 import { useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 
 import {
-  buildCategoryLabel,
   buildCategoryPathMap,
   buildCategoryTree,
   filterCategoryTree,
@@ -13,6 +12,11 @@ import type { Assignments, BootstrapPayload, CategoryNode, ProductRecord } from 
 
 type SaveState = "idle" | "saving" | "saved" | "error";
 type ProductFilter = "all" | "assigned" | "unassigned";
+
+const previewCategoryCollator = new Intl.Collator("pl", {
+  sensitivity: "base",
+  numeric: true,
+});
 
 function ProductFilterButton({
   active,
@@ -259,12 +263,15 @@ export function EditorApp({ initialToken }: { initialToken: string }) {
     };
   }, [data]);
 
-  const currentCategoryLabel = useMemo(() => {
+  const previewCategoryLabels = useMemo(() => {
     const exportCategoryIds = data
       ? pruneAncestorCategoryIds(selectedCategoryIds, data.categories)
       : selectedCategoryIds;
 
-    return buildCategoryLabel(exportCategoryIds, pathMap);
+    return exportCategoryIds
+      .map((categoryId) => pathMap.get(categoryId) ?? "")
+      .filter((label) => label.length > 0)
+      .sort((left, right) => previewCategoryCollator.compare(left, right));
   }, [data, pathMap, selectedCategoryIds]);
 
   const saveAssignmentsWithDebounce = (assignments: Assignments, product: ProductRecord) => {
@@ -552,21 +559,34 @@ export function EditorApp({ initialToken }: { initialToken: string }) {
                   </div>
                 </div>
 
-                <div className="rounded-2xl border border-zinc-200 p-4 hidden">
-                  <p className="text-sm font-medium text-zinc-800">Finalne pole `Kategorie`</p>
-                  <p className="mt-2 min-h-16 rounded-xl bg-zinc-50 px-3 py-3 text-sm leading-6 text-zinc-700">
-                    {currentCategoryLabel || "Brak przypisanych kategorii"}
-                  </p>
+                <div className="rounded-2xl border border-zinc-200 p-4">
+                  <p className="text-sm font-medium text-zinc-800">Podglad przypisanych kategorii</p>
+                  <div className="mt-3 min-h-40 rounded-xl bg-zinc-50 px-3 py-3">
+                    {previewCategoryLabels.length > 0 ? (
+                      <ul className="space-y-2">
+                        {previewCategoryLabels.map((label) => (
+                          <li className="flex items-start gap-3 text-sm leading-6 text-zinc-700" key={label}>
+                            <span className="mt-2 h-1.5 w-1.5 rounded-full bg-zinc-400" />
+                            <span>{label}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-sm leading-6 text-zinc-500">Brak przypisanych kategorii</p>
+                    )}
+                  </div>
                 </div>
 
-                <a
-                  className="inline-flex w-fit rounded-full border border-zinc-300 px-4 py-2 text-sm font-medium text-zinc-800 hover:bg-zinc-50"
-                  href={selectedProduct["URL produktu"]}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  Otworz produkt w Woo
-                </a>
+                <div className="mt-auto rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
+                  <a
+                    className="inline-flex w-full items-center justify-center rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-800 transition-colors hover:border-zinc-900 hover:bg-zinc-900 hover:text-white"
+                    href={selectedProduct["URL produktu"]}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Otworz produkt w Woo
+                  </a>
+                </div>
               </div>
             ) : (
               <div className="flex h-full items-center justify-center text-sm text-zinc-500">
