@@ -552,7 +552,7 @@ export function EditorApp({ initialToken }: { initialToken: string }) {
                   </div>
                 </div>
 
-                <div className="rounded-2xl border border-zinc-200 p-4">
+                <div className="rounded-2xl border border-zinc-200 p-4 hidden">
                   <p className="text-sm font-medium text-zinc-800">Finalne pole `Kategorie`</p>
                   <p className="mt-2 min-h-16 rounded-xl bg-zinc-50 px-3 py-3 text-sm leading-6 text-zinc-700">
                     {currentCategoryLabel || "Brak przypisanych kategorii"}
