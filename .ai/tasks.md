@@ -11,9 +11,11 @@
 
 ## Done
 
+- [x] Auto-scroll selected product into view during prev/next navigation
+- [x] Re-run lint and build after list scroll sync
+- [x] Implement minimal categorization UI with autosave and exports
 - [x] Redesign center panel header/actions to avoid layout shift
 - [x] Re-run lint and build after center panel layout change
-- [x] Implement minimal categorization UI with autosave and exports
 - [x] Polish center panel categories preview and fixed Woo link area
 - [x] Re-run lint and build after center panel polish
 - [x] Fix category export pruning to keep deepest selected path

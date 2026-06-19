@@ -134,6 +134,7 @@ export function EditorApp({ initialToken }: { initialToken: string }) {
   const deferredCategorySearch = useDeferredValue(categorySearch);
   const saveTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const saveRequestVersionRef = useRef(0);
+  const productButtonRefs = useRef(new Map<number, HTMLButtonElement>());
 
   useEffect(() => {
     const controller = new AbortController();
@@ -237,6 +238,19 @@ export function EditorApp({ initialToken }: { initialToken: string }) {
   }, [data, filteredProducts, selectedProductId]);
 
   const currentSelectedProductId = selectedProduct?.Identyfikator ?? null;
+
+  useEffect(() => {
+    if (currentSelectedProductId === null) {
+      return;
+    }
+
+    const selectedButton = productButtonRefs.current.get(currentSelectedProductId);
+
+    selectedButton?.scrollIntoView({
+      block: "nearest",
+      behavior: "smooth",
+    });
+  }, [currentSelectedProductId]);
 
   const selectedCategoryIds = useMemo(() => {
     if (!data || !selectedProduct) {
@@ -484,6 +498,14 @@ export function EditorApp({ initialToken }: { initialToken: string }) {
                         : "rounded-2xl border border-zinc-200 bg-white p-3 text-left hover:border-zinc-300 hover:bg-zinc-50"
                     }
                     key={product.Identyfikator}
+                    ref={(element) => {
+                      if (element) {
+                        productButtonRefs.current.set(product.Identyfikator, element);
+                        return;
+                      }
+
+                      productButtonRefs.current.delete(product.Identyfikator);
+                    }}
                     onClick={() => {
                       setSelectedProductId(product.Identyfikator);
                       setStickyVisibleProductId(null);
